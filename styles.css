@@ -1,91 +1,45 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.header {
-    background: #0044cc;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-}
-
-.header h1 {
-    font-size: 2.5em;
-    margin: 0;
-}
-
-.header p {
-    font-size: 1.2em;
-}
-
-.nav {
-    background: #003080;
-    padding: 10px 0;
-    text-align: center;
-}
-
-.nav a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    transition: background 0.3s;
-}
-
-.nav a:hover {
-    background: #0055ff;
-}
-
-.main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px 0;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    animation: backgroundAnimation 10s ease-in-out infinite;
 }
 
-.section {
-    width: 100%;
-    padding: 20px;
-    margin: 10px 0;
-    background: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-.footer {
-    background: #0044cc;
+h1 {
     color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 15px 25px;
     text-align: center;
-    padding: 15px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.3s;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: #ff4c4c;
+    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {
-    .nav {
-        display: flex;
+    .container {
         flex-direction: column;
-    }
-
-    .nav a {
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .header h1 {
-        font-size: 2em;
-    }
-    .header p {
-        font-size: 1em;
+        padding: 20px;
     }
 }
